@@ -1,6 +1,6 @@
 package com.example.labassignment.repository;
 
-import com.example.labassignment.model.Author;
+import com.example.labassignment.model.domain.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
