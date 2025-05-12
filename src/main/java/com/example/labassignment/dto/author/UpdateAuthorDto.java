@@ -1,4 +1,4 @@
-package com.example.labassignment.dto.updateDtos;
+package com.example.labassignment.dto.author;
 
 import com.example.labassignment.model.domain.Author;
 import com.example.labassignment.model.domain.Country;

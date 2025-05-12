@@ -42,7 +42,7 @@ public class WishlistServiceImpl implements WishlistService {
 
     @Override
     public Optional<Wishlist> addBookToWishlist(String username, Long bookId) {
-        User user = userService.findByUsername(username);
+        User user = userService.findByUsername(username).get();
 
         Wishlist wishlist = wishlistRepository.findByUser(user)
                 .orElseGet(() -> wishlistRepository.save(new Wishlist(user, new ArrayList<>())));
@@ -69,7 +69,7 @@ public class WishlistServiceImpl implements WishlistService {
 
     @Override
     public Optional<Wishlist> findByUser(String username) {
-        User user = userService.findByUsername(username);
+        User user = userService.findByUsername(username).get();
         if (user == null) {
             throw new RuntimeException("User not found!");
         }
@@ -79,7 +79,7 @@ public class WishlistServiceImpl implements WishlistService {
     @Override
     @Transactional
     public void rentAllBooksInWishlist(String username) {
-        User user = userService.findByUsername(username);
+        User user = userService.findByUsername(username).get();
         Wishlist wishlist = wishlistRepository.findByUser(user)
                 .orElseThrow(() -> new RuntimeException("Wishlist not found for user!"));
 
@@ -104,7 +104,7 @@ public class WishlistServiceImpl implements WishlistService {
 
     @Override
     public void rentBook(String username, Long id) {
-        User user = userService.findByUsername(username);
+        User user = userService.findByUsername(username).get();
         Wishlist wishlist = wishlistRepository.findByUser(user)
                 .orElseThrow(() -> new RuntimeException("Wishlist not found for user!"));
 
@@ -121,7 +121,7 @@ public class WishlistServiceImpl implements WishlistService {
 
     @Override
     public List<Author> sortAuthorsByWishlistCount(String username) {
-        User user = userService.findByUsername(username);
+        User user = userService.findByUsername(username).get();
         Wishlist wishlist = wishlistRepository.findByUser(user)
                 .orElseThrow(() -> new RuntimeException("Wishlist not found for user!"));
 

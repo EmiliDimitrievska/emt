@@ -1,8 +1,10 @@
 package com.example.labassignment.web;
 
-import com.example.labassignment.dto.createDtos.CreateAuthorDto;
-import com.example.labassignment.dto.displayDtos.DisplayAuthorDto;
-import com.example.labassignment.dto.updateDtos.UpdateAuthorDto;
+import com.example.labassignment.dto.author.CreateAuthorDto;
+import com.example.labassignment.dto.author.DisplayAuthorDto;
+import com.example.labassignment.dto.author.UpdateAuthorDto;
+import com.example.labassignment.model.views.AuthorsPerCountryView;
+import com.example.labassignment.projections.AuthorProjection;
 import com.example.labassignment.service.application.AuthorApplicationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -98,5 +100,15 @@ public class AuthorController {
         }
 
         return ResponseEntity.ok().body(authors);
+    }
+
+    @GetMapping("/by-country")
+    public ResponseEntity<List<AuthorsPerCountryView>> findAuthorsPerCountry() {
+        return ResponseEntity.ok(authorApplicationService.findAuthorsPerCountry());
+    }
+
+    @GetMapping("/names")
+    public ResponseEntity<List<AuthorProjection>> findAllByNameAndSurname() {
+        return ResponseEntity.ok(authorApplicationService.findAllByNameAndSurname());
     }
 }

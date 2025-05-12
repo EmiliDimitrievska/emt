@@ -1,8 +1,8 @@
 package com.example.labassignment.service.application;
 
 import com.example.labassignment.dto.WishlistDto;
-import com.example.labassignment.dto.displayDtos.DisplayAuthorDto;
-import com.example.labassignment.dto.displayDtos.DisplayBookDto;
+import com.example.labassignment.dto.author.DisplayAuthorDto;
+import com.example.labassignment.dto.book.DisplayBookDto;
 
 import java.util.List;
 import java.util.Optional;

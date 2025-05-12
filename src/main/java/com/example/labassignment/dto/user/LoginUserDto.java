@@ -1,4 +1,4 @@
-package com.example.labassignment.dto.auth;
+package com.example.labassignment.dto.user;
 
 public record LoginUserDto(String username, String password) {
 }

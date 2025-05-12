@@ -30,7 +30,7 @@ public class DataInitializer {
         this.wishlistRepository = wishlistRepository;
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void init(){
         Country country1=new Country("country1", "Country 1");
         Country country2=new Country("country2", "Country 2");
