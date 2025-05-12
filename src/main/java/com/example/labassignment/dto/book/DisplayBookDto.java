@@ -1,4 +1,4 @@
-package com.example.labassignment.dto.displayDtos;
+package com.example.labassignment.dto.book;
 
 import com.example.labassignment.model.domain.Author;
 import com.example.labassignment.model.domain.Book;

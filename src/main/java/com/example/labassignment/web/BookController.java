@@ -1,8 +1,9 @@
 package com.example.labassignment.web;
 
-import com.example.labassignment.dto.createDtos.CreateBookDto;
-import com.example.labassignment.dto.displayDtos.DisplayBookDto;
-import com.example.labassignment.dto.updateDtos.UpdateBookDto;
+import com.example.labassignment.dto.book.CreateBookDto;
+import com.example.labassignment.dto.book.DisplayBookDto;
+import com.example.labassignment.dto.book.UpdateBookDto;
+import com.example.labassignment.model.views.BooksPerAuthorView;
 import com.example.labassignment.service.application.BookApplicationService;
 import com.example.labassignment.service.domain.BookService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -113,5 +114,10 @@ public class BookController {
         }
 
         return ResponseEntity.ok().body(books); // Return 200 with the list
+    }
+
+    @GetMapping("/by-author")
+    public ResponseEntity<List<BooksPerAuthorView>> findBooksPerAuthor(){
+        return ResponseEntity.ok(bookApplicationService.findBooksPerAuthor());
     }
 }

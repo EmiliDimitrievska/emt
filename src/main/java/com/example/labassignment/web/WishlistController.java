@@ -1,7 +1,7 @@
 package com.example.labassignment.web;
 
 import com.example.labassignment.dto.WishlistDto;
-import com.example.labassignment.dto.displayDtos.DisplayAuthorDto;
+import com.example.labassignment.dto.author.DisplayAuthorDto;
 import com.example.labassignment.service.application.WishlistApplicationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

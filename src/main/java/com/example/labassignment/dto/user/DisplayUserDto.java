@@ -1,4 +1,4 @@
-package com.example.labassignment.dto.displayDtos;
+package com.example.labassignment.dto.user;
 
 import com.example.labassignment.model.domain.User;
 import com.example.labassignment.model.enumerations.Role;

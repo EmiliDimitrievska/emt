@@ -1,7 +1,7 @@
 package com.example.labassignment.dto;
 
-import com.example.labassignment.dto.displayDtos.DisplayBookDto;
-import com.example.labassignment.dto.displayDtos.DisplayUserDto;
+import com.example.labassignment.dto.book.DisplayBookDto;
+import com.example.labassignment.dto.user.DisplayUserDto;
 import com.example.labassignment.model.domain.Wishlist;
 
 

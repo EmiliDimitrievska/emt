@@ -89,11 +89,18 @@
             <scope>runtime</scope>
         </dependency>
 
+
         <!-- Javax Validation за валидација на податоци -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+
 
     </dependencies>
 

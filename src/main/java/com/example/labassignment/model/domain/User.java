@@ -32,6 +32,8 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    private Wishlist wishlist;
 
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
@@ -96,5 +98,13 @@ public class User implements UserDetails {
 
     public Role getRole() {
         return this.role;
+    }
+
+    public void setWishlist(Wishlist wishlist) {
+        this.wishlist = wishlist;
+    }
+
+    public Wishlist getWishlist() {
+        return wishlist;
     }
 }

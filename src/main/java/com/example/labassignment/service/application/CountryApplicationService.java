@@ -1,8 +1,8 @@
 package com.example.labassignment.service.application;
 
-import com.example.labassignment.dto.createDtos.CreateCountryDto;
-import com.example.labassignment.dto.displayDtos.DisplayCountryDto;
-import com.example.labassignment.dto.updateDtos.UpdateCountryDto;
+import com.example.labassignment.dto.country.CreateCountryDto;
+import com.example.labassignment.dto.country.DisplayCountryDto;
+import com.example.labassignment.dto.country.UpdateCountryDto;
 
 import java.util.List;
 import java.util.Optional;

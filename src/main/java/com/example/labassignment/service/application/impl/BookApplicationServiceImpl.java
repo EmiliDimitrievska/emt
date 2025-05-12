@@ -1,8 +1,9 @@
 package com.example.labassignment.service.application.impl;
 
-import com.example.labassignment.dto.createDtos.CreateBookDto;
-import com.example.labassignment.dto.displayDtos.DisplayBookDto;
-import com.example.labassignment.dto.updateDtos.UpdateBookDto;
+import com.example.labassignment.dto.book.CreateBookDto;
+import com.example.labassignment.dto.book.DisplayBookDto;
+import com.example.labassignment.dto.book.UpdateBookDto;
+import com.example.labassignment.model.views.BooksPerAuthorView;
 import com.example.labassignment.service.application.BookApplicationService;
 import com.example.labassignment.service.domain.AuthorService;
 import com.example.labassignment.service.domain.BookService;
@@ -66,6 +67,11 @@ public class BookApplicationServiceImpl implements BookApplicationService {
         return authorService.findById(book.author())
                 .flatMap(author -> bookService.update(id, book.toBook(author)))
                 .map(UpdateBookDto::from);
+    }
+
+    @Override
+    public List<BooksPerAuthorView> findBooksPerAuthor() {
+        return bookService.findBooksPerAuthor();
     }
 
     /*@Override

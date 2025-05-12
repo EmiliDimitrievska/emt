@@ -1,4 +1,4 @@
-package com.example.labassignment.dto.displayDtos;
+package com.example.labassignment.dto.country;
 
 import com.example.labassignment.model.domain.Country;
 

@@ -1,8 +1,8 @@
 package com.example.labassignment.service.application.impl;
 
 import com.example.labassignment.dto.WishlistDto;
-import com.example.labassignment.dto.displayDtos.DisplayAuthorDto;
-import com.example.labassignment.dto.displayDtos.DisplayBookDto;
+import com.example.labassignment.dto.author.DisplayAuthorDto;
+import com.example.labassignment.dto.book.DisplayBookDto;
 import com.example.labassignment.model.domain.Author;
 import com.example.labassignment.service.application.WishlistApplicationService;
 import com.example.labassignment.service.domain.WishlistService;

@@ -1,8 +1,10 @@
 package com.example.labassignment.service.domain.impl;
 
 import com.example.labassignment.model.domain.Book;
+import com.example.labassignment.model.views.BooksPerAuthorView;
 import com.example.labassignment.repository.AuthorRepository;
 import com.example.labassignment.repository.BookRepository;
+import com.example.labassignment.repository.BooksPerAuthorViewRepository;
 import com.example.labassignment.service.domain.BookService;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +15,12 @@ import java.util.Optional;
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     private final AuthorRepository authorRepository;
+    private final BooksPerAuthorViewRepository booksPerAuthorViewRepository;
 
-    public BookServiceImpl(BookRepository bookRepository, AuthorRepository authorRepository) {
+    public BookServiceImpl(BookRepository bookRepository, AuthorRepository authorRepository, BooksPerAuthorViewRepository booksPerAuthorViewRepository) {
         this.bookRepository = bookRepository;
         this.authorRepository = authorRepository;
+        this.booksPerAuthorViewRepository = booksPerAuthorViewRepository;
     }
 
     @Override
@@ -71,5 +75,15 @@ public class BookServiceImpl implements BookService {
     public List<Book> findByName(String bookName, String authorName) {
         return bookRepository.findAll().stream().filter(x->x.getName().contains(bookName)||x.getAuthor().getName().contains(authorName)).toList();
        // authorRepository.findByName(authorName)
+    }
+
+    @Override
+    public void refreshMaterializedView() {
+        booksPerAuthorViewRepository.refreshMaterializedView();
+    }
+
+    @Override
+    public List<BooksPerAuthorView> findBooksPerAuthor() {
+        return booksPerAuthorViewRepository.findAll();
     }
 }

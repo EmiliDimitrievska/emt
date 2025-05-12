@@ -1,9 +1,11 @@
 package com.example.labassignment.service.application.impl;
 
 
-import com.example.labassignment.dto.createDtos.CreateAuthorDto;
-import com.example.labassignment.dto.displayDtos.DisplayAuthorDto;
-import com.example.labassignment.dto.updateDtos.UpdateAuthorDto;
+import com.example.labassignment.dto.author.CreateAuthorDto;
+import com.example.labassignment.dto.author.DisplayAuthorDto;
+import com.example.labassignment.dto.author.UpdateAuthorDto;
+import com.example.labassignment.model.views.AuthorsPerCountryView;
+import com.example.labassignment.projections.AuthorProjection;
 import com.example.labassignment.service.application.AuthorApplicationService;
 import com.example.labassignment.service.domain.AuthorService;
 import com.example.labassignment.service.domain.CountryService;
@@ -49,6 +51,16 @@ public class AuthorApplicationServiceImpl implements AuthorApplicationService {
         return countryService.findById(updateAuthorDto.country())
                 .flatMap(country -> authorService.update(id, updateAuthorDto.toAuthor(country)))
                 .map(UpdateAuthorDto::from);
+    }
+
+    @Override
+    public List<AuthorsPerCountryView> findAuthorsPerCountry() {
+        return authorService.findAuthorsPerCountry();
+    }
+
+    @Override
+    public List<AuthorProjection> findAllByNameAndSurname() {
+        return authorService.findAllByNameAndSurname();
     }
 
     @Override
