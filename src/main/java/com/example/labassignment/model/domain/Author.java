@@ -5,7 +5,7 @@ import lombok.*;
 
 @Setter
 @Getter
-@AllArgsConstructor
+//@AllArgsConstructor
 @Entity
 public class Author {
     @Id

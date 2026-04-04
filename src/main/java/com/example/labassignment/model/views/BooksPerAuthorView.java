@@ -6,8 +6,8 @@ import jakarta.persistence.Id;
 import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
 
-@Immutable
-@Entity
+@Immutable// da ne dozvolime da se menuva
+@Entity // za da go prepoznae hibranete
 @SuppressWarnings("SqlResolve")
 @Subselect("select * from public.books_per_author")
 public class BooksPerAuthorView {
