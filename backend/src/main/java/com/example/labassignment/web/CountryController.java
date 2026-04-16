@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/countries")
 @CrossOrigin(origins = "*")
-@Tag(name = "Country API", description = "Endpoints for managing countries") // Swagger Tag for grouping
+@Tag(name = "Country API", description = "Endpoints for managing countries")
 public class CountryController {
 
     private final CountryApplicationService countryApplicationService;

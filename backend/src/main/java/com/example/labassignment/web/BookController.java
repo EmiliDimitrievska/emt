@@ -110,10 +110,10 @@ public class BookController {
         List<DisplayBookDto> books = bookApplicationService.findByName(bookName, authorName);
 
         if (books.isEmpty()) {
-            return ResponseEntity.notFound().build(); // Return 404 if no books found
+            return ResponseEntity.notFound().build(); //404 if no books found
         }
 
-        return ResponseEntity.ok().body(books); // Return 200 with the list
+        return ResponseEntity.ok().body(books); // 200 with the list
     }
 
     @GetMapping("/by-author")

@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/authors")
 @CrossOrigin(origins = "*")
-@Tag(name = "Author API", description = "Endpoints for managing authors") // Swagger Tag for grouping
+@Tag(name = "Author API", description = "Endpoints for managing authors")
 public class AuthorController {
     private final AuthorApplicationService authorApplicationService;
 

@@ -14,7 +14,7 @@ public interface BooksPerAuthorViewRepository extends JpaRepository<BooksPerAuth
     @Transactional
     @Modifying(clearAutomatically = true)//modifying kazuva deka ova query ne vrakja data, tuku pravi refresh
     @SuppressWarnings("SqlResolve")//true delot kazuva deka otkako kje se promeni treba hibrante da se updatira od cache
-    @Query(value = "REFRESH MATERIALIZED VIEW public.books_per_author", nativeQuery = true)//this is sql not jb1l
+    @Query(value = "REFRESH MATERIALIZED VIEW public.books_per_author", nativeQuery = true)
     void refreshMaterializedView();
 
 }
