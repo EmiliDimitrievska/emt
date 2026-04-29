@@ -35,6 +35,13 @@ public class BookApplicationServiceImpl implements BookApplicationService {
 
     @Override
     public Optional<CreateBookDto> save(CreateBookDto book) {
+        Long authorId = book.author();
+        if (book.category() == null) {
+            throw new IllegalArgumentException("Category is required");
+        }
+        if (authorId == null) {
+            throw new IllegalArgumentException("Author is required");
+        }
         return authorService.findById(book.author())
                 .flatMap(author -> bookService.save(book.toBook(author)))
                 .map(CreateBookDto::from);

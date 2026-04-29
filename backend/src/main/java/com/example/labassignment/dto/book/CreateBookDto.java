@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public record CreateBookDto(String name,
-                            Category category,
+                            String category,
                             Long author,
                             Integer availableCopies) {
     public static CreateBookDto from(Book book) {
         return new CreateBookDto(
                 book.getName(),
-                book.getCategory(),
+                book.getCategory().name(),
                 book.getAuthor().getId(),
                 book.getAvailableCopies()
         );
@@ -25,6 +25,7 @@ public record CreateBookDto(String name,
     }
 
     public Book toBook(Author author) {
-        return new Book(name, category, author, availableCopies);
+        Category category1 = Category.valueOf(category);
+        return new Book(name, category1, author, availableCopies);
     }
 }
