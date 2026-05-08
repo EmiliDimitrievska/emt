@@ -7,7 +7,7 @@ const bookRepository = {
   findById: async (id) => {
     return await axiosInstance.get(`/books/${id}`);
   },
-  edit: async(id, data) =>{
+  update: async(id, data) =>{
     return await axiosInstance.put(`/books/update/${id}`, data)
   },
 
@@ -15,7 +15,7 @@ const bookRepository = {
     return await axiosInstance.post("/books", data)
   },
   delete: async(id)=>{
-    return await axiosInstance.delete(`/books/${id}`)
+    return await axiosInstance.delete(`/books/delete/${id}`)
   }
 };
 
